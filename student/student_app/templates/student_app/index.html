@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学员管理系统</title>
+</head>
+<body>
+<h1>学院管理系统</h1>
+<ul>
+    {% for stu in student %}
+        <l1>{{ stu.name }}--{{ stu.profession }}--{{ stu.get_status_display }}</l1><br>
+    {% endfor %}
+</ul>
+<form action="/" method="post">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
